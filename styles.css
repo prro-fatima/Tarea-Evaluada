@@ -1,0 +1,217 @@
+/* --- TRUCO #1: Ciber-Fondo Profundo --- */
+/* Cambiamos el fondo plano por un gradiente radial que da profundidad */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Comienza en un azul-negro oscuro y se vuelve negro total en los bordes */
+    background: radial-gradient(circle at center, #1a1a2e 0%, #0f0f12 80%, #050507 100%);
+    color: #e0e0e0;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    /* Asegura que el fondo cubra todo */
+}
+
+/* --- TRUCO #3: Encabezado Pegajoso y Vidrio Esmerilado --- */
+header {
+    /* Fondo semi-transparente para ver el contenido debajo */
+    background-color: rgba(31, 31, 31, 0.85);
+    padding: 30px 20px;
+    text-align: center;
+    border-bottom: 4px solid #00ffcc;
+    /* Borde más grueso */
+
+    /* El efecto mágico de "vidrio esmerilado" (solo funciona en algunos navegadores modernos como Chrome) */
+    backdrop-filter: blur(8px);
+
+    /* Hace que el encabezado se quede arriba mientras bajas */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    /* Asegura que esté por encima de todo */
+
+    /* Sombrita para separarlo del contenido */
+    box-shadow: 0 5px 15px rgba(0, 255, 204, 0.2);
+}
+
+/* --- TRUCO #2: Título con Neón Animado --- */
+header h1 {
+    color: #00ffcc;
+    margin: 0 0 15px 0;
+    font-size: 2.8em;
+    /* Un poco más grande */
+
+    /* La base del neón: brillo de texto múltiple */
+    text-shadow: 0 0 8px #00ffcc, 0 0 15px #00ccaa, 0 0 25px #00ccaa;
+
+    /* Llamamos a la animación de palpitación que creamos abajo */
+    animation: neonPalpitar 2.5s ease-in-out infinite alternate;
+}
+
+/* Animación que hace variar el brillo suavemente */
+@keyframes neonPalpitar {
+    from {
+        text-shadow: 0 0 8px #00ffcc, 0 0 15px #00ccaa;
+    }
+
+    to {
+        text-shadow: 0 0 15px #00ffcc, 0 0 25px #00ccaa, 0 0 35px #00ccaa;
+    }
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: color 0.3s;
+    /* Suaviza el cambio al hover */
+}
+
+nav ul li a:hover {
+    color: #00ffcc;
+    text-shadow: 0 0 10px #00ffcc;
+    /* El link también brilla */
+}
+
+/* --- TRUCO #4: Contenido Principal y Tarjetas Interactivas --- */
+main {
+    padding: 40px 20px;
+    /* Más espacio */
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+section,
+aside {
+    /* Fondo de tarjeta ligeramente transparente para que se mezcle con el fondo de profundidad */
+    background-color: rgba(30, 30, 30, 0.9);
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 15px;
+    /* Bordes más redondeados y modernos */
+
+    /* Borde muy sutil para dar estructura */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+
+    /* Sombra profunda base */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.7);
+
+    /* Preparamos para la animación al pasar el mouse */
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* TRUCO #4 CONTINÚA: Efecto Elevador y Brillo al Hover */
+section:hover,
+aside:hover {
+    transform: translateY(-8px) scale(1.01);
+    /* Se eleva y agranda apenas un poco */
+    border-color: #00ffcc;
+    /* El borde se ilumina */
+    box-shadow: 0 10px 30px rgba(0, 255, 204, 0.3);
+    /* Brillo verde sutil de neón debajo */
+}
+
+h2,
+h3 {
+    color: #4da6ff;
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+img {
+    margin-top: 15px;
+    margin-bottom: 20px;
+    border: 2px solid rgba(0, 255, 204, 0.5);
+    /* Borde de neón a la imagen */
+}
+
+/* --- Formulario de Contacto Avanzado --- */
+form div {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 7px;
+    color: #b3b3b3;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #333;
+    /* Borde más visible */
+    border-radius: 8px;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    box-sizing: border-box;
+    transition: all 0.3s;
+    /* Suaviza el enfoque */
+}
+
+/* Truco: Brillo al hacer clic en las cajas de texto */
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: #00ffcc;
+    box-shadow: 0 0 15px rgba(0, 255, 204, 0.4);
+    background-color: #222;
+}
+
+button {
+    background-color: #00ffcc;
+    color: #050507;
+    border: none;
+    padding: 12px 25px;
+    font-weight: bold;
+    font-size: 1.2em;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s;
+    text-shadow: none;
+    /* Evita que el texto brille en el botón */
+}
+
+button:hover {
+    background-color: #00ccaa;
+    transform: scale(1.02);
+    /* Se agranda apenas un poco */
+    box-shadow: 0 0 15px #00ffcc;
+    /* Brillo de neón al botón */
+}
+
+/* --- Pie de Página (footer) Interactivo --- */
+footer {
+    background-color: #1f1f1f;
+    text-align: center;
+    padding: 20px;
+    border-top: 3px solid #4da6ff;
+    margin-top: 40px;
+    position: relative;
+    z-index: 10;
+}
+
+footer p {
+    margin: 0;
+    transition: color 0.3s;
+}
+
+footer:hover p {
+    color: #4da6ff;
+    /* El texto se vuelve azul al pasar el mouse */
+}
